@@ -1,0 +1,261 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+          string greeting = "Hello,World!";
+            string name = "Alice";
+            string message = greeting +" " +name;
+            Console.WriteLine(message+"nice to meet you");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age = 5;
+            Console.WriteLine("Привет,завтра тебе исполниться " + (age + 1));//без скобок будет 51,а так будет 6
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age = 27;
+            string name = "Иван";
+            Console.WriteLine("Ваше имя:"+ name + "ваш возрост:" +age);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age;
+            string input = "15";//строка, которая может быть преобразована в число
+            age = int.Parse(input);//преобразование строки в число с помощью метода Parse
+            Console.WriteLine(age);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            name = Console.ReadLine();
+            Console.WriteLine("Привет, " + name);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            string name;
+            name = Console.ReadLine();
+            Console.WriteLine("Привет, " + name);
+            int age;
+            Console.WriteLine("Введите возраст:");
+            age = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("здраствуйте"+name+"Ваш возраст:"+age);
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            float health;
+            int armor;
+            int damage;
+            int precentConverter = 100;
+
+            Console.Write("Введите количество здоровья: ");
+            health = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите количество брони: ");
+            armor = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Введите количество урона: ");
+            damage = Convert.ToInt32(Console.ReadLine());
+
+            health -= Convert.ToSingle(damage) / precentConverter * armor;
+
+            Console.WriteLine($"Вам нанесли {damage} урона. У вас осталось {health} здоровья.");
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int money;
+            int food;
+            int pricy=10;
+            bool isPay;
+
+
+                Console.WriteLine("Добро пожаловать в пекарню сегодня еда за "+pricy+"Монет");
+                Console.WriteLine("Сколько монет у вас есть?");
+                money = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Сколько еды вы хотите купить?");
+                food = Convert.ToInt32(Console.ReadLine());
+                isPay = money >= food * pricy;
+                food *= Convert.ToInt32(isPay);
+
+            money -= food * pricy;
+            Console.WriteLine("У вас в сумке"+food+"еденицы еды и"+money+"Монет");
+
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
