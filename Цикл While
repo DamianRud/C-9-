@@ -1,0 +1,111 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age;
+            Console.WriteLine("Введите ваш возраст");
+
+            age = Convert.ToInt32(Console.ReadLine());
+            while (age > 0)
+            {
+                
+                    Console.WriteLine("С днем рождения");
+                age--;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age;
+            Console.WriteLine("Введите ваш возраст");
+
+            age = Convert.ToInt32(Console.ReadLine());
+            while (age > 0)
+            {
+
+                Console.WriteLine("С днем рождения");
+                age--;
+
+                
+                    if (age == 5)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age;
+            Console.WriteLine("Введите ваш возраст");
+
+            age = Convert.ToInt32(Console.ReadLine());
+            while (age-- > 0)
+            {
+                if (age == 5)
+                {
+                    continue;
+                }
+
+                Console.WriteLine("С днем рождения"+age);
+
+
+
+
+            }
+        }
+    }
+}
