@@ -1,0 +1,144 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            string password = "123456";
+            string User;
+
+            Console.WriteLine("Введите пароль");
+
+            User=Console.ReadLine();
+
+            if (User == password)
+            {
+                Console.WriteLine("Пароль верный");
+            }
+            else
+            {
+                Console.WriteLine("Пароль неверный");
+            }
+
+
+
+
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Reflection.Metadata;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            float rub;
+            float dol;
+
+            float rubToDolRate = 64f;
+            float dolToRubRate = 66f;
+
+            float exchangeCurrecyCiunt;
+
+            string desiredOperation;
+
+            Console.WriteLine("Добро пожаловать в конверт валют");
+
+            Console.WriteLine("Введите баланс рублей");
+            rub = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите баланс Долара");
+            dol = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Введите опирацию");
+            Console.WriteLine("1-обменять рубли на доллары");
+            Console.WriteLine("2-обменять доллары на рубли");
+
+            Console.WriteLine("ваш выбор:");
+
+            desiredOperation = Console.ReadLine();
+
+            switch (desiredOperation)
+            {
+                case "1":
+                    Console.WriteLine("Обмен рублей на долары");
+                    Console.WriteLine("Сколько вы хотите обменять");
+                    exchangeCurrecyCiunt = Convert.ToInt32(Console.ReadLine());
+                    if (rub >= exchangeCurrecyCiunt)
+                    {
+                        rub -= exchangeCurrecyCiunt;
+                        dol += exchangeCurrecyCiunt / rubToDolRate;
+                        Console.WriteLine("Операция прошла успешно");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно рублей для обмена");
+                    }
+                    break;
+
+                case "2": // Убраны лишние скобки перед case
+                    Console.WriteLine("Обмен долларов на рубли");
+                    Console.WriteLine("Сколько хотите обменять");
+                    exchangeCurrecyCiunt = Convert.ToInt32(Console.ReadLine());
+                    if (dol >= exchangeCurrecyCiunt)
+                    {
+                        dol -= exchangeCurrecyCiunt;
+                        rub += exchangeCurrecyCiunt * dolToRubRate;
+                        Console.WriteLine("Операция прошла успешно");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Недостаточно долларов для обмена");
+                    }
+                    break; // Добавлен обязательный break
+                    default:
+                    Console.WriteLine("Неверный выбор операции");
+                    break;
+            }
+                Console.WriteLine($"Ваш баланс: {rub} рублей, {dol} долларов");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
