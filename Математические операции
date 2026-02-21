@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            float result;
+            int x, y;
+            x = 5;
+            y = 2;
+
+            result = Convert.ToSingle(x) / y;//Convert.ToSingle(x) конвертирует целое число в дробное
+            Console.WriteLine(result);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int timeInMinutes = 130;
+            int hour;
+            int minute;
+
+            hour = timeInMinutes / 60;
+            minute = timeInMinutes % 60;
+
+            Console.WriteLine("Hours" + hour);
+            Console.WriteLine("minutes" + minute);
+        }
+    }
+}
