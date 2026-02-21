@@ -1,0 +1,19 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int age = 18;
+            bool isAdult;
+
+            isAdult = age >= 18;//если больше или равно 18 то true иначе false
+            Console.WriteLine(isAdult);
+
+        }
+    }
+}
