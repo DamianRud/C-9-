@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Text;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            string DayOfWeek = Console.ReadLine();
+            switch (DayOfWeek)
+            {
+                case "Понедельник":
+                    Console.WriteLine("Понедельник - это первый день недели.");
+                    break;
+                case "Вторник":
+                    Console.WriteLine("Вторник - это второй день недели.");
+                    break;
+                case "Среда":
+                    Console.WriteLine("Среда - это третий день недели.");
+                    break;
+                case "Четверг":
+                    Console.WriteLine("Четверг - это четвертый день недели.");
+                    break;
+                case "Пятница":
+                    Console.WriteLine("Пятница - это пятый день недели.");
+                    break;
+                case "Суббота":
+                    Console.WriteLine("Суббота - это шестой день недели.");
+                    break;
+                case "Воскресенье":
+                    Console.WriteLine("Воскресенье - это седьмой день недели.");
+                    break;
+                default:
+                    Console.WriteLine("Некорректный ввод. Пожалуйста, введите название дня недели на русском языке.");
+                    break;
+            }
+            
+        }
+
+    }
+
+
+
+
+}
