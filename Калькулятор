@@ -1,0 +1,63 @@
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            float a;
+            float b;
+            string operation;
+
+            while (true)
+            {
+                Console.WriteLine("Добро пожаловать в калькулятор");
+                Console.WriteLine("Выберите действие (+,-,*,/,Выход)");
+                operation = Console.ReadLine();
+
+                if (operation == "Выход")
+                {
+                    Console.WriteLine("До свидания!");
+                    break;
+                }
+
+                Console.WriteLine("Введите 1 число:");
+                a = float.Parse(Console.ReadLine());
+
+                Console.WriteLine("Введите 2 число:");
+                b = float.Parse(Console.ReadLine());
+
+                if (operation == "+")
+                {
+                    Console.WriteLine("Ответ: " + (a + b));
+                }
+                else if (operation == "-")
+                {
+                    Console.WriteLine("Ответ: " + (a - b));
+                }
+                else if (operation == "*")
+                {
+                    Console.WriteLine("Ответ: " + (a * b));
+                }
+                else if (operation == "/")
+                {
+                    if (b != 0)
+                    {
+                        Console.WriteLine("Ответ: " + (a / b));
+                    }
+                    else
+                    {
+                        Console.WriteLine("Ошибка: Деление на ноль невозможно.");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Неизвестная операция.");
+                }
+
+                Console.WriteLine(); // пустая строка для красоты
+            }
+        }
+    }
+}
