@@ -1,0 +1,129 @@
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            {
+              Random random = new Random();//создаем объект класса Random для генерации случайных чисел
+                int value = random.Next(0, 10);//генерируем случайное число от 0 до 9 и сохраняем его в переменную value
+
+                while (true)//бесконечный цикл, который будет выполняться до тех пор, пока программа не будет остановлена
+                {   
+                    value= random.Next(0, 10);//генерируем новое случайное число от 0 до 9 и сохраняем его в переменную value
+                    Console.WriteLine(value);//выводим значение переменной value на консоль
+                    Console.ReadKey();//ожидаем нажатия клавиши пользователем, чтобы программа не завершалась сразу после вывода числа на консоль
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            {
+              for (int i = 0; i < 10; i++)//Цикл для генерации 10 случайных чисел от 0 до 4
+                {
+                    Random random = new Random();//Создание экземпляра класса Random для генерации случайных чисел
+                    Console.WriteLine(random.Next(0,5));//Генерация и вывод случайного числа от 0 до 4 (5 не включительно)
+                }
+                
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+ИГРА УГАДАЙ ЧИСЛО С ДИОПОЗОНОМ
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            int number;
+            int lower, higher;
+            int triesCount = 5;
+            int user;
+            Random random = new Random();
+
+            number = random.Next(0, 101);
+
+            // Гарантируем корректные границы
+            lower = Math.Max(0, number - 10);
+            higher = Math.Min(100, number + 10);
+
+            Console.WriteLine("Мы загадали число от 0 до 100.");
+            Console.WriteLine("Оно больше чем " + lower + ", но меньше чем " + higher + ".");
+            Console.WriteLine("Что это за число? У вас " + triesCount + " попыток отгадать.");
+
+            while (triesCount > 0)
+            {
+                Console.WriteLine("Ваш ответ:");
+
+                if (int.TryParse(Console.ReadLine(), out user))
+                {
+                    if (user == number)
+                    {
+                        Console.WriteLine("Вы правы! Это было число " + number);
+                        break;
+                    }
+                    else
+                    {
+                        triesCount--;
+                        Console.WriteLine("Вы не угадали. Осталось попыток: " + triesCount);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Введите корректное число!");
+                }
+            }
+
+            if (triesCount == 0)
+            {
+                Console.WriteLine("Попытки закончились. Было загадано число " + number);
+            }
+        }
+    }
+}
+
+
+
+
+
+
