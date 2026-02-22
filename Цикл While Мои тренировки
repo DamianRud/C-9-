@@ -1,0 +1,39 @@
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+
+            {
+                int sum = 0;      // переменная для суммы
+                int number = -1;  // любое число, кроме 0 (чтобы цикл начался)
+
+                while (number != 0)   // цикл работает пока number НЕ равно 0
+                {
+                    Console.Write("Введите число: ");
+                    number = Convert.ToInt32(Console.ReadLine());
+
+                    sum = sum + number;  // прибавляем число к сумме
+                }
+
+                Console.WriteLine("Сумма: " + sum);
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
