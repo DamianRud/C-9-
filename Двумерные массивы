@@ -1,0 +1,124 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int rows = 3;
+        int cols = 3;
+        int[,] matrix = new int[rows, cols];
+
+        // ===============================
+        // 1. Заполнение матрицы с клавиатуры
+        // ===============================
+        Console.WriteLine("Введите элементы матрицы 3x3:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < cols; j++)
+            {
+                Console.Write($"Элемент [{i},{j}]: ");
+                matrix[i, j] = int.Parse(Console.ReadLine());
+            }
+        }
+
+        // ===============================
+        // 2. Вывод матрицы
+        // ===============================
+        Console.WriteLine("\nМатрица:");
+        PrintMatrix(matrix);
+
+        // ===============================
+        // 3. Сумма каждой строки
+        // ===============================
+        Console.WriteLine("\nСумма строк:");
+        for (int i = 0; i < rows; i++)
+        {
+            int sumRow = 0;
+            for (int j = 0; j < cols; j++)
+                sumRow += matrix[i, j];
+            Console.WriteLine($"Строка {i}: {sumRow}");
+        }
+
+        // ===============================
+        // 4. Сумма каждого столбца
+        // ===============================
+        Console.WriteLine("\nСумма столбцов:");
+        for (int j = 0; j < cols; j++)
+        {
+            int sumCol = 0;
+            for (int i = 0; i < rows; i++)
+                sumCol += matrix[i, j];
+            Console.WriteLine($"Столбец {j}: {sumCol}");
+        }
+
+        // ===============================
+        // 5. Сумма главной диагонали
+        // ===============================
+        int diagSum = 0;
+        for (int i = 0; i < rows; i++)
+            diagSum += matrix[i, i];
+        Console.WriteLine("\nСумма главной диагонали: " + diagSum);
+
+        // ===============================
+        // 6. Максимальный элемент
+        // ===============================
+        int maxElem = matrix[0, 0];
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                if (matrix[i, j] > maxElem)
+                    maxElem = matrix[i, j];
+        Console.WriteLine("Максимальный элемент матрицы: " + maxElem);
+
+        // ===============================
+        // 7. Поменять строки местами (1 и 2)
+        // ===============================
+        for (int j = 0; j < cols; j++)
+        {
+            int temp = matrix[0, j];
+            matrix[0, j] = matrix[1, j];
+            matrix[1, j] = temp;
+        }
+
+        Console.WriteLine("\nМатрица после обмена 1 и 2 строки:");
+        PrintMatrix(matrix);
+
+        // ===============================
+        // 8. Разворот матрицы (зеркально)
+        // ===============================
+        Console.WriteLine("\nМатрица после зеркального разворота по горизонтали:");
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = cols - 1; j >= 0; j--)
+                Console.Write(matrix[i, j] + "\t");
+            Console.WriteLine();
+        }
+
+        // ===============================
+        // 9. Транспонирование матрицы
+        // ===============================
+        int[,] transposed = new int[cols, rows];
+        for (int i = 0; i < rows; i++)
+            for (int j = 0; j < cols; j++)
+                transposed[j, i] = matrix[i, j];
+
+        Console.WriteLine("\nТранспонированная матрица:");
+        for (int i = 0; i < cols; i++)
+        {
+            for (int j = 0; j < rows; j++)
+                Console.Write(transposed[i, j] + "\t");
+            Console.WriteLine();
+        }
+    }
+
+    static void PrintMatrix(int[,] mat)
+    {
+        for (int i = 0; i < mat.GetLength(0); i++)
+        {
+            for (int j = 0; j < mat.GetLength(1); j++)
+            {
+                Console.Write(mat[i, j] + "\t");
+            }
+            Console.WriteLine();
+        }
+    }
+}
