@@ -1,0 +1,31 @@
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            // Предположим, массив выглядит так
+            int[] arr1 = { 1, 2, 3, 4, 5 };
+
+            int sum = 0;
+
+            // Проверка на null, чтобы программа не вылетела
+            if (arr1 != null)
+            {
+                foreach (var n in arr1)
+                {
+                    sum += n;
+                }
+                Console.WriteLine("2. Сумма элементов: " + sum);
+            }
+            else
+            {
+                Console.WriteLine("Массив не инициализирован!");
+            }
+
+        }
+
+    }
+}
