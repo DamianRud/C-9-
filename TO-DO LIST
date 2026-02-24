@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static List<string> tasks = new List<string>();
+
+    static void Main()
+    {
+        while (true)
+        {
+            Console.Clear();
+            Console.WriteLine("==== TO-DO LIST ====");
+            Console.WriteLine("1. Показать задачи");
+            Console.WriteLine("2. Добавить задачу");
+            Console.WriteLine("3. Удалить задачу");
+            Console.WriteLine("4. Отметить как выполненную");
+            Console.WriteLine("0. Выход");
+            Console.Write("Выберите действие: ");
+
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    ShowTasks();
+                    break;
+                case "2":
+                    AddTask();
+                    break;
+                case "3":
+                    RemoveTask();
+                    break;
+                case "4":
+                    CompleteTask();
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Неверный выбор!");
+                    Pause();
+                    break;
+            }
+        }
+    }
+
+    static void ShowTasks()
+    {
+        Console.Clear();
+        Console.WriteLine("==== СПИСОК ЗАДАЧ ====");
+
+        if (tasks.Count == 0)
+        {
+            Console.WriteLine("Список пуст.");
+        }
+        else
+        {
+            for (int i = 0; i < tasks.Count; i++)
+            {
+                Console.WriteLine($"{i + 1}. {tasks[i]}");
+            }
+        }
+
+        Pause();
+    }
+
+    static void AddTask()
+    {
+        Console.Write("Введите новую задачу: ");
+        string task = Console.ReadLine();
+        tasks.Add("[ ] " + task);
+        Console.WriteLine("Задача добавлена!");
+        Pause();
+    }
+
+    static void RemoveTask()
+    {
+        ShowTasks();
+        Console.Write("Введите номер задачи для удаления: ");
+
+        if (int.TryParse(Console.ReadLine(), out int index) &&
+            index > 0 && index <= tasks.Count)
+        {
+            tasks.RemoveAt(index - 1);
+            Console.WriteLine("Задача удалена!");
+        }
+        else
+        {
+            Console.WriteLine("Неверный номер.");
+        }
+
+        Pause();
+    }
+
+    static void CompleteTask()
+    {
+        ShowTasks();
+        Console.Write("Введите номер выполненной задачи: ");
+
+        if (int.TryParse(Console.ReadLine(), out int index) &&
+            index > 0 && index <= tasks.Count)
+        {
+            tasks[index - 1] = tasks[index - 1].Replace("[ ]", "[X]");
+            Console.WriteLine("Задача отмечена как выполненная!");
+        }
+        else
+        {
+            Console.WriteLine("Неверный номер.");
+        }
+
+        Pause();
+    }
+
+    static void Pause()
+    {
+        Console.WriteLine("\nНажмите любую клавишу...");
+        Console.ReadKey();
+    }
+}
