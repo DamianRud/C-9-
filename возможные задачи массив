@@ -1,0 +1,105 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("==== Контрольная по массивам (тренировка) ====\n");
+
+        // ===============================
+        // Задача 1: Вывести массив
+        // ===============================
+        int[] arr1 = { 1, 2, 3, 4, 5 };
+        Console.WriteLine("1. Массив:");
+        foreach (var n in arr1)
+            Console.Write(n + " ");
+        Console.WriteLine("\n");
+
+        // ===============================
+        // Задача 2: Сумма элементов
+        // ===============================
+        int sum = 0;
+        foreach (var n in arr1)
+            sum += n;
+        Console.WriteLine("2. Сумма элементов: " + sum);
+
+        // ===============================
+        // Задача 3: Минимальный и максимальный
+        // ===============================
+        int min = arr1[0];
+        int max = arr1[0];
+        foreach (var n in arr1)
+        {
+            if (n < min) min = n;
+            if (n > max) max = n;
+        }
+        Console.WriteLine("3. Min = " + min + ", Max = " + max);
+
+        // ===============================
+        // Задача 4: Среднее значение
+        // ===============================
+        double avg = arr1.Average();
+        Console.WriteLine("4. Среднее: " + avg);
+
+        // ===============================
+        // Задача 5: Количество четных
+        // ===============================
+        int countEven = 0;
+        foreach (var n in arr1)
+        {
+            if (n % 2 == 0) countEven++;
+        }
+        Console.WriteLine("5. Количество четных: " + countEven);
+
+        // ===============================
+        // Задача 6: Найти индекс элемента 3
+        // ===============================
+        int index = Array.IndexOf(arr1, 3);
+        Console.WriteLine("6. Индекс числа 3: " + index);
+
+        // ===============================
+        // Задача 7: Развернуть массив
+        // ===============================
+        int[] reversed = (int[])arr1.Clone();
+        Array.Reverse(reversed);
+        Console.WriteLine("7. Развернутый массив:");
+        foreach (var n in reversed)
+            Console.Write(n + " ");
+        Console.WriteLine();
+
+        // ===============================
+        // Задача 8: Отсортировать массив по возрастанию
+        // ===============================
+        int[] sorted = (int[])arr1.Clone();
+        Array.Sort(sorted);
+        Console.WriteLine("8. Отсортированный массив:");
+        foreach (var n in sorted)
+            Console.Write(n + " ");
+        Console.WriteLine();
+
+        // ===============================
+        // Задача 9: Количество повторений числа 2
+        // ===============================
+        int count2 = arr1.Count(x => x == 2);
+        Console.WriteLine("9. Количество числа 2: " + count2);
+
+        // ===============================
+        // Задача 10: Сдвиг массива вправо на 1
+        // ===============================
+        int[] shifted = (int[])arr1.Clone();
+        int last = shifted[shifted.Length - 1];
+        for (int i = shifted.Length - 1; i > 0; i--)
+        {
+            shifted[i] = shifted[i - 1];
+        }
+        shifted[0] = last;
+
+        Console.WriteLine("10. Массив после сдвига вправо:");
+        foreach (var n in shifted)
+            Console.Write(n + " ");
+        Console.WriteLine("\n");
+
+        Console.WriteLine("==== Конец контрольной ====");
+    }
+}
