@@ -1,0 +1,91 @@
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        int[] nums = { 5, 2, 8, 2, 1 };
+
+        Console.WriteLine("Исходный массив:");
+        PrintArray(nums);
+
+        // ========================
+        // Методы класса Array
+        // ========================
+
+        // Sort
+        Array.Sort(nums);
+        Console.WriteLine("\nArray.Sort:");
+        PrintArray(nums);
+
+        // Reverse
+        Array.Reverse(nums);
+        Console.WriteLine("\nArray.Reverse:");
+        PrintArray(nums);
+
+        // IndexOf
+        int firstIndex = Array.IndexOf(nums, 2);
+        Console.WriteLine($"\nArray.IndexOf(2): {firstIndex}");
+
+        // LastIndexOf
+        int lastIndex = Array.LastIndexOf(nums, 2);
+        Console.WriteLine($"Array.LastIndexOf(2): {lastIndex}");
+
+        // Resize
+        Array.Resize(ref nums, 7);
+        Console.WriteLine("\nArray.Resize до 7:");
+        PrintArray(nums);
+
+        // Clear
+        Array.Clear(nums, 0, 2);
+        Console.WriteLine("\nArray.Clear (первые 2 элемента):");
+        PrintArray(nums);
+
+        // Copy
+        int[] copy = new int[nums.Length];
+        Array.Copy(nums, copy, nums.Length);
+        Console.WriteLine("\nArray.Copy:");
+        PrintArray(copy);
+
+        // ========================
+        // LINQ методы
+        // ========================
+
+        int[] linqArray = { 5, 2, 8, 2, 1 };
+
+        Console.WriteLine("\nLINQ массив:");
+        PrintArray(linqArray);
+
+        Console.WriteLine($"\nMin: {linqArray.Min()}");
+        Console.WriteLine($"Max: {linqArray.Max()}");
+        Console.WriteLine($"Sum: {linqArray.Sum()}");
+        Console.WriteLine($"Average: {linqArray.Average()}");
+        Console.WriteLine($"Contains(2): {linqArray.Contains(2)}");
+
+        // Where
+        var filtered = linqArray.Where(x => x > 2).ToArray();
+        Console.WriteLine("\nWhere(x > 2):");
+        PrintArray(filtered);
+
+        // Select
+        var multiplied = linqArray.Select(x => x * 2).ToArray();
+        Console.WriteLine("\nSelect(x * 2):");
+        PrintArray(multiplied);
+
+        // OrderBy
+        var ordered = linqArray.OrderBy(x => x).ToArray();
+        Console.WriteLine("\nOrderBy:");
+        PrintArray(ordered);
+
+        // Distinct
+        var unique = linqArray.Distinct().ToArray();
+        Console.WriteLine("\nDistinct:");
+        PrintArray(unique);
+    }
+
+    static void PrintArray(int[] array)
+    {
+        Console.WriteLine(string.Join(", ", array));
+    }
+}
