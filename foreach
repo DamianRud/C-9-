@@ -1,0 +1,117 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // 1. Перебор массива
+        int[] numbers = { 1, 2, 3, 4 };
+        Console.WriteLine("1. Массив:");
+        foreach (int n in numbers)
+        {
+            Console.WriteLine(n);
+        }
+
+        // 2. Перебор List
+        List<string> names = new List<string> { "Ivan", "Anna", "Oleg" };
+        Console.WriteLine("\n2. List:");
+        foreach (string name in names)
+        {
+            Console.WriteLine(name);
+        }
+
+        // 3. Перебор строки
+        string text = "Hello";
+        Console.WriteLine("\n3. Строка:");
+        foreach (char letter in text)
+        {
+            Console.WriteLine(letter);
+        }
+
+        // 4. Перебор Dictionary
+        Dictionary<string, int> ages = new Dictionary<string, int>
+        {
+            { "Ivan", 20 },
+            { "Anna", 25 }
+        };
+
+        Console.WriteLine("\n4. Dictionary:");
+        foreach (KeyValuePair<string, int> pair in ages)
+        {
+            Console.WriteLine($"{pair.Key} - {pair.Value}");
+        }
+
+        // 5. foreach с var
+        Console.WriteLine("\n5. var:");
+        foreach (var item in numbers)
+        {
+            Console.WriteLine(item);
+        }
+
+        // 6. break
+        Console.WriteLine("\n6. break:");
+        foreach (int n in numbers)
+        {
+            if (n == 3)
+                break;
+
+            Console.WriteLine(n);
+        }
+
+        // 7. continue
+        Console.WriteLine("\n7. continue:");
+        foreach (int n in numbers)
+        {
+            if (n == 2)
+                continue;
+
+            Console.WriteLine(n);
+        }
+
+        // 8. Вложенный foreach
+        Console.WriteLine("\n8. Вложенный foreach:");
+        int[][] matrix =
+        {
+            new int[] { 1, 2 },
+            new int[] { 3, 4 }
+        };
+
+        foreach (var row in matrix)
+        {
+            foreach (var item in row)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+        }
+
+        // 9. foreach + LINQ
+        Console.WriteLine("\n9. LINQ (x > 2):");
+        foreach (var n in numbers.Where(x => x > 2))
+        {
+            Console.WriteLine(n);
+        }
+
+        // 10. foreach с объектами
+        Console.WriteLine("\n10. Объекты:");
+
+        List<Person> people = new List<Person>
+        {
+            new Person { Name = "Ivan", Age = 20 },
+            new Person { Name = "Anna", Age = 25 }
+        };
+
+        foreach (var person in people)
+        {
+            Console.WriteLine($"{person.Name} - {person.Age}");
+        }
+    }
+}
+
+class Person
+{
+    public string Name;
+    public int Age;
+}
