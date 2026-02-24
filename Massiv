@@ -154,3 +154,246 @@ namespace C__за_9_часов
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {    //Двумерные массивы
+            int[,] array;
+            int[,] array2 = new int[2, 3];
+
+
+            int[,] array3 = {
+                {2,3,4},
+                {4,5,1},
+                {7,8,9}
+        };
+            int[,] array4 = new int[2, 3] {
+    { 9, 8, 7 },
+    { 6, 5, 4 }
+            };
+            //Console.WriteLine(array3[2,2]);//вывод элемента 9
+
+            Console.WriteLine(array3.Length);//количество элементов в массиве
+
+            for (int i = 0; i < array3.GetLength(0); i++)//GetLength(0) - количество строк
+            {
+                for (int j = 0; j < array3.GetLength(1); j++)//GetLength(1) - количество столбцов
+                {
+                    Console.Write(array3[i, j] + " ");//вывод всех элементов массива
+                }
+                
+
+                Console.WriteLine();
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {    //Двумерные массивы
+            int[,] array3 = new int[15, 15];//создание двумерного массива 4 на 4
+
+            Random random = new Random();
+
+          
+
+            
+            for (int i = 0; i < array3.GetLength(0); i++)//GetLength(0) - количество строк
+            {
+                for (int j = 0; j < array3.GetLength(1); j++)//GetLength(1) - количество столбцов
+                {
+                    array3[i, j] = random.Next(1, 10);//заполнение массива случайными числами от 1 до 9
+                    Console.Write(array3[i, j] + " ");//вывод всех элементов массива
+                }
+
+
+                Console.WriteLine();
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+using System;
+
+namespace C__за_9_часов
+{
+    internal class Class1
+    {
+        static void Main(string[] args)
+        {
+            bool isOpen = true;
+            string[,] books =
+            {
+    { "Александр Пушкин", "Михаил Лермонтов", "Сергей Есенин" },
+    { "Роберт Мартин", "Джесси Шелл", "Сергей Тепляков" },
+    { "Стивен Кинг", "Говард Лавкрафт", "Брем Стокер" }
+};
+
+            while (isOpen)
+            {
+                // Очистка не обязательна, если мы пишем в ту же позицию,
+                // но если список уменьшится, старые буквы останутся.
+                Console.SetCursorPosition(0, 20);
+                Console.WriteLine("\nВесь список авторов:\n");
+
+                for (int i = 0; i < books.GetLength(0); i++)
+                {
+                    for (int j = 0; j < books.GetLength(1); j++)
+                    {
+                        Console.Write(books[i, j] + " | ");
+                    }
+                    Console.WriteLine();
+                }
+
+                // ВАЖНО: Добавляем паузу или условие выхода
+                Console.SetCursorPosition(0, 0);
+                Console.WriteLine("Библиотека");
+                Console.WriteLine("1-узнать имя автора по индексу книги");
+                Console.WriteLine("2-найти книгу по автору");
+                Console.WriteLine("3-Выход");
+
+                Console.WriteLine("Выберите пунтк меню:");
+
+                switch (Convert.ToInt32(Console.ReadLine()))
+                {
+
+                    case 1:
+                        int line,column;
+                        Console.WriteLine(" Введите номер полки:");
+                        line = Convert.ToInt32(Console.ReadLine())-1;
+                        Console.WriteLine("введите номер столбца");
+                        column = Convert.ToInt32(Console.ReadLine())-1;
+                        Console.WriteLine("Этот автор;" + books[line,column]);
+                        break;
+                    case 2:
+                        string author;
+                        bool authorFound = false;
+                        Console.WriteLine("Введите автора");
+                        author = Console.ReadLine();
+                        for(int i = 0; i < books.GetLength(0); i++)
+                        {
+                            for(int j = 0; j < books.GetLength(1); j++)
+                            {
+                                if (books[i, j].ToLower() == author.ToLower())
+                                {
+                                    Console.WriteLine("Книга этого автора находится на полке " + (i + 1) + " в столбце " + (j + 1));
+                                    authorFound = true;
+                                }
+                            }
+                                if(authorFound==false)
+                            {
+                                Console.WriteLine("Такого автора нет в библиотеке");
+                            }
+                        }
+                        break;
+                    case 3:
+                        isOpen = false;
+                        break;
+                    default:
+                        Console.WriteLine("Введина не верная команда");
+                        break;
+
+
+                        {
+                            if (isOpen)
+                            {
+                                Console.WriteLine("Выберите пунтк меню:");
+                            }
+                        }
+
+
+
+
+                        Console.ReadKey();
+                        Console.Clear();
+
+                }
+
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
